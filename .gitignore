@@ -1,9 +1,3 @@
-/.phpunit.cache
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
 /backend/vendor
 .env
 .env.backup
@@ -14,10 +8,7 @@ Homestead.yaml
 auth.json
 npm-debug.log
 yarn-error.log
-/.fleet
-/.idea
-/.vscode
-
+.fleet
 
 # Mac
 .DS_STORE
@@ -37,7 +28,7 @@ Thumbs.db
 node_modules
 
 # Compiled files
-/scripts
-/src/environment.ts
-/dist
-/test/coverage-jest
+scripts
+src/environment.ts
+dist
+test/coverage-jest
