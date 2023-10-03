@@ -1,0 +1,39 @@
+<template>
+    <div class="row mb-4">
+        <h4>Lennujaamade vahemaa</h4>
+        <p>
+            Arvuta vahemaa 2 lennuajaama vahel. 
+            Sisesta kaks lennujaamaga linna ja vajuta "Arvuta vahemaa". 
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="airportA" class="form-label">Lennujaam A</label>
+            <input list="airports-list" type="text" class="form-control" id="airportA" placeholder="" value.bind="airportAinput.value" required="">
+            <div if.bind="airportAinput.validity.isInvalid" class="invalid-feedback" style="display: block;">
+                ${airportAinput.validity.message}
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="airportB" class="form-label">Lennujaam B</label>
+            <input list="airports-list" type="text" class="form-control" id="airportB" placeholder="" value.bind="airportBinput.value" required="">
+            <div if.bind="airportBinput.validity.isInvalid" class="invalid-feedback" style="display: block;">
+                ${airportBinput.validity.message}
+            </div>
+        </div>
+        <datalist id="airports-list">
+            <option repeat.for="airport of airports" value="${airport.city_name}">${airport.city_name}, ${airport.airport_name} ${!!airport.iata ? '(' + airport.iata + ')' : ''} - ${airport.country_name}</option>
+        </datalist>
+    </div>
+    <div class="d-flex justify-content-end mt-2">
+        <button class="btn btn-primary" click.trigger="calculateDistance()">Arvuta vahemaa</button>
+    </div>
+    <div if.bind="calculatedDistace" class="row">
+        <h4>Tulemus</h4>
+
+        <p>
+            Vahemaa ${calculatedDistace.pointA} ja ${calculatedDistace.pointB} linnade vahel on ${calculatedDistace.distance.toFixed(1)} kilomeetrit.
+        </p>
+    </div>
+
+</template>

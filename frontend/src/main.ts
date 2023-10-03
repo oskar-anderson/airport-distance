@@ -1,6 +1,9 @@
 import {Aurelia} from 'aurelia-framework';
 import environment from '../config/environment.json';
 import {PLATFORM} from 'aurelia-pal';
+import "bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../static/style.css"
 
 export function configure(aurelia: Aurelia): void {
   aurelia.use

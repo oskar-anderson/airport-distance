@@ -17,3 +17,27 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+
+# Mac
+.DS_STORE
+Thumbs.db
+
+# IDE
+.idea
+.chrome
+/*.log
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies
+node_modules
+
+# Compiled files
+/scripts
+/src/environment.ts
+/dist
+/test/coverage-jest
