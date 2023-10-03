@@ -30,6 +30,9 @@ export class HomeIndex {
     }
 
     calculateDistance() {
+        // Reset validity to default valid state and turn to invalid on error
+        this.airportAinput.validity.isInvalid = false;
+        this.airportBinput.validity.isInvalid = false;
         if (
             this.handleRequiredInputIsEmpty(this.airportAinput) || 
             this.handleRequiredInputIsEmpty(this.airportBinput)
@@ -65,8 +68,6 @@ export class HomeIndex {
             pointB: selectedAirportB.city_name,
             distance: distance
         }
-        this.airportAinput.validity.isInvalid = false;
-        this.airportBinput.validity.isInvalid = false;
     }
 
     // https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
