@@ -88,9 +88,7 @@ export class HomeIndex {
     }
 
     created() {
-        console.log("start loading airports")
         this.airportService.getAirports((airports: IAirport[]) => {
-            console.log("completed loading airports", airports)
             this.airports = airports;
         })
     }
