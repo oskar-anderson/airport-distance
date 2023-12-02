@@ -1,0 +1,62 @@
+<template>
+
+    <h2>Change vs click events</h2>
+
+    <div>
+        <label>
+            <input 
+                type="checkbox" 
+                click.delegate="eventHandlerNotReturningTrue($event)"
+            >
+            Click event will be disabled if event handler does not return true - Aurelia will not call preventDefault.
+        </label>
+    </div>
+
+    <div>
+        <label>
+            <input 
+                type="checkbox" 
+                change.delegate="eventHandlerNotReturningTrue($event)"
+            >
+            Change event handler does not have to return true. Change event is not preventable.
+        </label>
+    </div>
+
+    <br>
+    <br>
+
+    <h2>Checkbox in a listening container</h2>
+
+    <div click.delegate="returnTrue($event)">
+        <label>
+            <input 
+                type="checkbox" 
+                change.delegate="containeredCheckboxClick1($event)"
+            >
+            Change event inside a container returning true.
+        </label>
+    </div>
+
+    <div click.delegate="returnNothing($event)">
+        <label>
+            <input 
+                type="checkbox" 
+                change.delegate="containeredCheckboxClick2($event)"
+            >
+            Change event inside a container returning nothing.
+        </label>
+    </div>
+
+    <br>
+    <br>
+    <h2>Event triggering order</h2>
+    <div style="background-color: antiquewhite;" class="px-2 pb-2" click.delegate="greetFromContainer()">
+        Container - Click me!
+        <div style="background-color: burlywood;" click.delegate="greetFromChild()">
+            Child - Click me!
+        </div>
+    </div>
+
+
+
+</template>

@@ -14,6 +14,7 @@ export class App {
     config.map([
       { route: ['', 'home', 'home/index'], name: 'home', moduleId: PLATFORM.moduleName('views/home/index'), nav: true, title: "Calculate distance" },
       { route: ['unknown'], name: 'unknown', moduleId: PLATFORM.moduleName('views/unknown/index'), nav: false },
+      { route: ['/test/checkbox-events'], name: 'checkbox-events', moduleId: PLATFORM.moduleName('views/test/checkbox-events'), nav: true },
     ]);
     config.mapUnknownRoutes(PLATFORM.moduleName('views/unknown/index'));
   }
