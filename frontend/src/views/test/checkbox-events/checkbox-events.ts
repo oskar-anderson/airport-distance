@@ -1,8 +1,10 @@
-import { autoinject } from 'aurelia-framework';
+import { autoinject, observable } from 'aurelia-framework';
 
 
 @autoinject
 export class CustomCheckbox {
+
+    private bindedCheckboxInStopPropagationContainer = true;
 
     attached(): void {
     
@@ -25,6 +27,11 @@ export class CustomCheckbox {
         console.log("containeredCheckboxClick2", e)
     }
 
+    outerContainerClick(e: Event) {
+        console.log("outerContainerClick", e)
+        return true;
+    }
+
     eventHandlerNotReturningTrue(e: Event) {
         console.log("eventHandlerNotReturningTrue", e)
     }
@@ -35,5 +42,21 @@ export class CustomCheckbox {
 
     greetFromChild() {
         console.log("Child greets you!");
+    }
+
+    stopPropagation(e: Event) {
+        console.log("stopPropagation")
+        e.stopPropagation();
+        return true;
+    }
+
+    bindedCheckboxInStopPropagationContainerChange(e: Event) {
+        console.log("bindedCheckboxInStopPropagationContainer", e);
+    }
+
+    stopPropagationMessage(e: Event, element: string) {
+        console.log("stopPropagationMessage", element)
+        e.stopPropagation();
+        return true;   
     }
 }

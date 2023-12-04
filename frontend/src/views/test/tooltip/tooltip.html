@@ -1,0 +1,28 @@
+<template>
+
+    <style>
+        #tooltip {
+            width: max-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #222;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 90%;
+        }
+    </style>
+
+    <div style="overflow: hidden; background-color: aquamarine;">
+        Overflow hidden
+        <div style="position: relative; margin: 6px; background-color: antiquewhite;">
+            Position relative
+            <button mouseover.trigger="buttonClick($event)">
+                My button
+            </button>
+            <div id="tooltip" role="tooltip">My tooltip</div>
+        </div>
+    </div>
+</template>

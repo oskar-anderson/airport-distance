@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@floating-ui/dom": "^1.5.3",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.4.0",
     "bootstrap": "^5.3.2"

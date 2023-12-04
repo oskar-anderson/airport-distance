@@ -1,0 +1,16 @@
+<template>
+    <h2>Items displayed by loop</h2>
+
+    <ul repeat.for="item of itemList">
+        <li>${item}</li>
+    </ul>
+
+    <h2>Items displayed by index</h2>
+
+    <ul repeat.for="item of itemList">
+        <li>${itemList[$index]}</li>
+    </ul>
+
+    <button click.delegate="addItem()">Add item</button>
+    <button click.delegate="clearItems()">Clear items</button>
+</template>

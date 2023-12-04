@@ -27,14 +27,17 @@
 
     <h2>Checkbox in a listening container</h2>
 
-    <div click.delegate="returnTrue($event)">
+    <div click.trigger="outerContainerClick($event)">
+    <div click.trigger="returnTrue($event)">
         <label>
             <input 
                 type="checkbox" 
-                change.delegate="containeredCheckboxClick1($event)"
+                click.trigger="containeredCheckboxClick1($event)"
             >
             Change event inside a container returning true.
         </label>
+        <button click.trigger="containeredCheckboxClick1($event)">Button</button>
+    </div>
     </div>
 
     <div click.delegate="returnNothing($event)">
@@ -57,6 +60,32 @@
         </div>
     </div>
 
+    <br>
+    <br>
+    <h2>Binded checkbox in container</h2>
 
+    <div click.delegate="stopPropagation($event)">
+        <label>
+            <input 
+                type="checkbox" 
+                change.delegate="containeredCheckboxClick2($event)"
+                checked.bind="bindedCheckboxInStopPropagationContainer"
+                change.delegate="bindedCheckboxInStopPropagationContainerChange($event)"
+            >
+            Binded checkbox inside a container with stopPropagation on 
+        </label>
+    </div>
 
+    <div>
+        <input click.delegate="stopPropagationMessage($event, 'input')" 
+            id="containeredCheckboxSeperate"
+            type="checkbox" 
+            change.delegate="containeredCheckboxClick2($event)"
+            checked.bind="bindedCheckboxInStopPropagationContainer"
+            change.delegate="bindedCheckboxInStopPropagationContainerChange($event)"
+        >
+        <label click.delegate="stopPropagationMessage($event, 'label')" for="containeredCheckboxSeperate">
+            Binded checkbox inside a container with stopPropagation on 
+        </label>
+    </div>
 </template>

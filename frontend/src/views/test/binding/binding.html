@@ -1,0 +1,7 @@
+<template>
+    <require from="./fooInput"></require>
+
+    <foo-input content.bind="foo" get-content.bind="getContent" is-great.bind="false"></foo-input>
+
+    <button click.delegate="resetBtn()">Reset text</button>
+</template>
